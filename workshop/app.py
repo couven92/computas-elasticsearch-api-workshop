@@ -16,7 +16,7 @@ def hello_world():
     """
     :return: "Hello, world!" til de som besøker siden. 
     """
-    pass
+    return "Hello, World!"
 
 
 @app.route('/calculator', methods=['GET'])
