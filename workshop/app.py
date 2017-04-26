@@ -27,7 +27,19 @@ def calculator():
     Endepunktet skal støtte "plus", "minus", "mult" og "div".
     :return: Resultatet av enkle heltallsoperasjoner.
     """
-    pass
+    op = request.args.get('operator')
+    op1 = float(request.args.get('operand1'))
+    op2 = float(request.args.get('operand2'))
+    if op == "plus":
+        return "Sum of %.2f and %.2f is %.2f" % (op1, op2, op1 + op2)
+    elif op == "minus":
+        return "Difference of %.2f and %.2f is %.2f" % (op1, op2, op1 - op2)
+    elif op == "mult":
+        return "Product of %.2f and %.2f is %.2f" % (op1, op2, op1 * op2)
+    elif op == "div":
+        return "Quotient of %.2f and %.2f is %.2f" % (op1, op2, op1 / op2)
+    else:
+        return ("Invalid operator: %s" % op), 400
 
 
 if __name__ == '__main__':
